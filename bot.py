@@ -12,7 +12,7 @@ guild = os.getenv('GUILD_ID')
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=intents, help_command=None)
 
-def update():
+async def update():
     print('updating')
     current = (datetime.datetime.utcnow())
     weekday = current.weekday()
@@ -34,7 +34,7 @@ def update():
     await bot.get_guild(guild).me.edit(nick=nickname)
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=status))
     time.sleep(60)
-    update()
+    await update()
 
 async def on_ready():
     await update()
