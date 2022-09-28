@@ -6,10 +6,8 @@ import time
 import asyncio
 from dotenv import load_dotenv
 load_dotenv()
-print('loaded env')
 token = os.getenv('DISCORD_TOKEN')
-#guild = 978102149420560414 #THIS IS ALREADY THE UWU ID
-guild = 993978823471276172
+guild = 978102149420560414 #THIS IS ALREADY THE UWU ID
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=intents, help_command=None)
 
